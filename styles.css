@@ -1,0 +1,339 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 20px 0; /* Add 50px padding to the bottom */
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-size: 14px; 
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Adjusted to make the container wider */
+    max-width: 80%;  /* Increased max-width */
+    padding: 10px 20px; /* Reduced padding for top and bottom */
+    box-sizing: border-box;
+    height: 600px; /* Standard height for all tabs */
+    overflow-y: auto; /* Add scroll if content overflows */
+    font-size: 14px; 
+}
+
+.instructions {
+    width: 95%; /* Adjusted to match the container width */
+    max-width: 80%; /* Increased max-width to match the container */
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: left; /* Align text to the left for consistency */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.tab-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: black;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-buttons button:hover {
+    background-color: #aaa;
+}
+
+.tab-buttons button:focus {
+    outline: none;
+}
+
+.select-all-header {
+    background-color: #b0b0b0; /* Medium gray color */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    width: 200px; /* Fixed width for the select all row */
+}
+
+.select-all-header label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.select-all-header input {
+    margin-right: 10px;
+}
+
+.select-all-button, .next-button, .back-button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.select-all-button:hover, .next-button:hover, .back-button:hover {
+    background-color: #0056b3;
+}
+
+.select-all-button:focus, .next-button:focus, .back-button:focus {
+    outline: none;
+}
+
+.export-button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF9800; /* Orange color */
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.export-button:hover {
+    background-color: #e68900;
+}
+
+.export-button:focus {
+    outline: none;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+form {
+    margin: 0;
+}
+
+#p1types {
+    font-size: 19px;
+}
+
+#iwanttohide {
+    display: none;
+}
+
+/* styles.css */
+#answerfonttab4 {
+    font-size: 14px; /* Adjust this if needed */
+}
+
+.tab4-content p,
+.tab4-content .answer-options {
+    font-size: 14px; /* Smaller font size */
+    line-height: 1.2; /* Adjusted line height */
+    margin-bottom: 1px; /* Reduced spacing between paragraphs */
+}
+
+.tab4-content .answer-options {
+    margin-top: 1px; /* Further reduced spacing before the answer options */
+    margin-bottom: 1px; /* Further reduced spacing after the answer options */
+    margin-left: 20px; /* Keep the indentation for answer options */
+}
+
+.tab4-content h3 {
+    font-size: 18px; /* Keep the headers larger */
+    font-weight: bold;
+    margin-bottom: 5px; /* Adjusted spacing under headers */
+}
+
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Space between the columns */
+}
+
+.left-column, .middle-column, .right-column {
+    width: 30%; /* Each column takes 30% of the width */
+}
+
+.characteristic-item {
+    display: flex;
+    justify-content: flex-start; /* Align items closer to the start */
+    align-items: center; /* Vertically align the checkbox and color box */
+    margin-bottom: 10px;
+}
+
+.checkbox-cell {
+    flex: 1;
+    margin-right: 2px; /* Reduce the space between the checkbox and color box */
+}
+
+.color-cell {
+    flex: 0;
+    margin: 0; /* Remove any default margin to bring it closer */
+}
+
+
+.characteristic-color-box {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+
+.asterisk-note {
+    font-size: 12px;
+    color: #555;
+    margin-top: 10px;
+    text-align: left; /* Adjust alignment as necessary */
+}
+
+
+
+/* Frequency */
+.highlight-frequency {
+    background-color: #FFD700; /* Gold */
+    color: black;
+}
+
+/* Duration */
+.highlight-duration {
+    background-color: #FF6347; /* Tomato */
+    color: white;
+}
+
+/* Controllability */
+.highlight-controllability {
+    background-color: #20B2AA; /* LightSeaGreen */
+    color: black;
+}
+
+/* Intention */
+.highlight-intention {
+    background-color: #4B0082; /* Indigo */
+    color: white;
+}
+
+/* Onset Timing */
+.highlight-onset {
+    background-color: #32CD32; /* LimeGreen */
+    color: black;
+}
+
+/* Recency Timing */
+.highlight-recency {
+    background-color: #6A5ACD; /* SlateBlue */
+    color: white;
+}
+
+/* Future Likelihood */
+.highlight-future {
+    background-color: #FF69B4; /* HotPink */
+    color: black;
+}
+
+/* Communication */
+.highlight-communication {
+    background-color: #FF4500; /* OrangeRed */
+    color: white;
+}
+
+/* Confidence */
+.highlight-confidence {
+    background-color: #2F4F4F; /* DarkSlateGray */
+    color: white;
+}
+
+/* Desire */
+.highlight-desire {
+    background-color: #8A2BE2; /* BlueViolet */
+    color: white;
+}
+
+/* Distress */
+.highlight-distress {
+    background-color: #8B0000; /* DarkRed */
+    color: white;
+}
+
+/* Problem */
+.highlight-problem {
+    background-color: #DAA520; /* GoldenRod */
+    color: black;
+}
+
+/* Deterrents */
+.highlight-deter {
+    background-color: #8B4513; /* SaddleBrown */
+    color: white;
+}
+
+/* Methods */
+.highlight-methods {
+    background-color: #FF8C00; /* DarkOrange */
+    color: black;
+}
+
+/* Plan How */
+.highlight-planhow {
+    background-color: #2E8B57; /* SeaGreen */
+    color: white;
+}
+
+/* Plan Where */
+.highlight-planwhere {
+    background-color: #4682B4; /* SteelBlue */
+    color: white;
+}
+
+/* Plan When */
+.highlight-planwhen {
+    background-color: #00CED1; /* DarkTurquoise */
+    color: black;
+}
+
+/* Plan HowWhereWhen */
+.highlight-planhowwherewhen {
+    background-color: #9400D3; /* DarkViolet */
+    color: white;
+}
+
+/* Plan Personal Affairs */
+.highlight-planpersonal {
+    background-color: #4169E1; /* RoyalBlue */
+    color: white;
+}
+
+/* Seriousness */
+.highlight-serious {
+    background-color: #DC143C; /* Crimson */
+    color: white;
+}
+
+/* Urge */
+.highlight-urge {
+    background-color: #B22222; /* FireBrick */
+    color: white;
+}

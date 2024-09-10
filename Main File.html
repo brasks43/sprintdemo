@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/docx@6.1.3/build/index.js"></script>
+
+</head>
+<body>
+    <div class="instructions">
+        This is a tool that allows you to customize an instrument to assess suicidal thoughts and behaviors. 
+        <p><b>The problem this tool is addressing:</b> There is a huge diversity in instruments used to assess suicidal thoughts and behaviors that makes it difficult to aggregate data or compare findings across studies. Instruments use a wide array of different questions and response options to measure the same constructs. More comprehensive instruments assess different characteristics of suicidal thoughts and behaviors, such as onset, frequency, and controllability of suicidal thoughts. However, researchers often have limited space to assess suicidal thoughts and behaviors in their study, and thus select instruments due to their brevity. </p>
+        <p><b>What this tool offers:</b> This tool allows researchers to customize the length of the instrument and select which provides flexibility in terms of length and characteristics assessed, while also making it easier for researchers to use standardized items, in terms of the wording of the questions and the response options. This will allow for easy aggregate and comparison across study. </p>
+    </div>
+
+    <div class="container">
+        <div class="tab-buttons">
+            <button onclick="showTab(1)">Tab 1</button>
+            <button onclick="showTab(3)">Tab 3</button>
+            <button onclick="showTab(4)">Tab 4</button>
+        </div>
+        <div id="tab1" class="tab active">
+            <h2><u>Section 1: Suicidal thoughts</u></h2>
+            <p><b>How to use this tool:</b> Below are three different types of suicidal thoughts. Having respondents answer multiple questions about suicidal thinking increases the validity of their responses. Therefore, these three items are required. However, beyond these three types of suicidal thoughts, <b><i>you can customize this instrument. </i></b> </p>
+            <p>You can select to have the instrument assess several characteristics of suicidal thinking, such as the intensity, frequency, controllability, and duration of suicidal thoughts, as well as their onset and most recent occurrence. </p>
+            <p>Start here by selecting which thoughts will have their <u>characteristics</u> assessed. The instrument can include characteristics for all three types of suicidal thinking or a subset of them. </p>
+            <div class="select-all-header">
+                <label><input type="checkbox" name="selectAll" onclick="selectAllCheckboxes(this)"> Select All</label>
+            </div>
+            <form>
+                <p>
+                    <label>
+                        <input type="checkbox" id="passive_thoughts" name="passive_thoughts" onclick="updateTotal()"> <span id="p1types">Passive suicidal thoughts</span>
+                    </label><br>
+                    Question: During the past 12 months, have you had wishes that you were dead or that you could go to sleep and not wake up?<br>
+                    Answer Options: Yes | No
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" id="active_thoughts" name="active_thoughts" onclick="updateTotal()"> <span id="p1types">Active suicidal thoughts</span>
+                    </label><br>
+                    Question: During the past 12 months, have you had thoughts about killing yourself?<br>
+                    Answer Options: Yes | No
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" id="active_thoughts_plan" name="active_thoughts_plan" onclick="updateTotal()"> <span id="p1types">Active suicidal thoughts with planning</span>
+                    </label><br>
+                    Question: During the past 12 months, have you had thoughts about how, where, or when you might kill yourself?<br>
+                    Answer Options: Yes | No
+                </p>
+                <span id="iwanttohide"><label>Total checked: <input type="text" id="tab1total" value="0" readonly></label></span>
+            </form>
+            <button class="next-button tab1-next-button" onclick="navigateToNextTab()">Next</button>
+        </div>
+
+        <div id="tab3" class="tab">
+            <h2><u>Section 2: Characteristics (only one)</u></h2>
+            <p><b>Now that you have selected which suicidal thoughts will have characteristics, please select which characteristics you’d like.</b></p>
+            <p>Note that when you select a characteristic (i.e., frequency), it will highlight the option you are selecting for your measure. The checkmark indicates that you want that characteristic included in the outputted measure.</p>
+        
+            <div id="tab3content"></div>
+            <hr>
+            <button class="back-button" onclick="showTab(1)">Back</button>
+            
+            <!-- Export Option Dropdown -->
+            <select id="exportOptionTab3" name="exportOption">
+                <option value="csv">CSV</option>
+                <option value="word">Word</option>
+            </select>
+            
+            <button class="submit-button" onclick="exportTab3Measure()">Submit</button>
+        </div>
+        
+        
+        
+        <div id="tab4" class="tab">
+            <h2><u>Section 2: Characteristics</u></h2>
+            <p><b>Now that you have selected which suicidal thoughts will have characteristics, please select which characteristics you’d like.</b></p><p>Note that when you select a characteristic (i.e., frequency) it will highlight the option you are selecting for your measure.  The checkmark indicates that you want that characteristic includes in the outputted measure.</p>
+            <div id="tab4content"></div>
+
+            <div id="onsetContent"></div>
+            <div id="recencyContent"></div>
+            <div id="frequencyContent"></div>
+            <div id="durationContent"></div>
+            <div id="controllabilityContent"></div>
+            <div id="problemContent"></div>
+            <div id="distressContent"></div>
+            <div id="desireContent"></div>
+            <div id="urge"></div>
+            <div id="serious"></div>
+            <div id="intentionContent"></div>
+            <div id="communicationContent"></div>
+            <div id="deterContent"></div>          
+            <div id="futureContent"></div>
+            <div id="methodsContent"></div>
+            <div id="confidenceContent"></div>
+            <div id="planhowContent"></div>
+            <div id="planwhereContent"></div>
+            <div id="planwhenContent"></div>
+            <div id="planhowwherewhenContent"></div>
+            <div id="planpersonalContent"></div>
+            
+            <hr>
+            <button class="back-button" onclick="goBack()">Back</button>
+        
+            <select id="exportOption" name="exportOption">
+                <option value="csv">CSV</option>
+                <option value="word">Word</option>
+            </select>
+            <button class="submit-button" onclick="exportMeasure()">Submit</button>
+            
+        
+
+    <script src="shared.js"></script>
+    <script src="tab1.js"></script>
+    <script src="tab3.js"></script>
+    <script src="tab4.js"></script>
+</body>
+</html>
